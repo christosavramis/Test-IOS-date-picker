@@ -1,146 +1,178 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-  <title>iOS Date Picker Test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>iOS Date Picker Test</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      padding: 24px;
-      background: #f5f5f5;
-      color: #222;
-    }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 24px;
+            background: #f5f5f5;
+            color: #222;
+        }
 
-    .container {
-      max-width: 420px;
-      margin: 40px auto;
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-    }
+        .container {
+            max-width: 420px;
+            margin: 40px auto;
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+        }
 
-    h2 {
-      margin-top: 0;
-    }
+        h2 {
+            margin-top: 0;
+        }
 
-    .date-button {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 52px;
-      padding: 14px;
-      background: #2563eb;
-      color: white;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      overflow: hidden;
-      cursor: pointer;
-    }
+        .date-button {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 52px;
+            padding: 14px;
+            background: #2563eb;
+            color: white;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            overflow: hidden;
+            cursor: pointer;
+        }
 
-    .date-button input {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      cursor: pointer;
-      font-size: 16px;
-    }
+        .date-button input {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+            font-size: 16px;
+        }
 
-    .native-input {
-      display: block;
-      width: 100%;
-      min-height: 48px;
-      margin-top: 12px;
-      padding: 10px;
-      font-size: 16px;
-    }
+        .native-input {
+            display: block;
+            width: 100%;
+            min-height: 48px;
+            margin-top: 12px;
+            padding: 10px;
+            font-size: 16px;
+        }
 
-    .result {
-      margin-top: 20px;
-      padding: 14px;
-      background: #e8f0fe;
-      border-radius: 8px;
-      overflow-wrap: anywhere;
-    }
+        .result {
+            margin-top: 20px;
+            padding: 14px;
+            background: #e8f0fe;
+            border-radius: 8px;
+            overflow-wrap: anywhere;
+        }
 
-    .section {
-      margin-top: 28px;
-    }
-  </style>
+        .section {
+            margin-top: 28px;
+        }
+
+
+        .anyds-datepicker__native {
+
+            pointer-events: none;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="container">
-    <h2>iPhone Date Picker Test</h2>
+    <div class="container">
+        <h2>iPhone Date Picker Test</h2>
 
-    <p>Test 1: Tap the blue button.</p>
+        <p>Test 1: Tap the blue button.</p>
 
-    <label class="date-button">
-      <span id="buttonText">📅 Select Date</span>
-      <input
-        type="date"
-        id="customDate"
-        aria-label="Select date"
-      >
-    </label>
+        <label class="date-button">
+            <span id="buttonText">📅 Select Date</span>
+            <input type="date" id="customDate" aria-label="Select date">
+        </label>
 
-    <div class="section">
-      <p>Test 2: Native HTML date input.</p>
+        <div class="section">
+            <p>Test 2: Native HTML date input.</p>
 
-      <input
-        class="native-input"
-        type="date"
-        id="nativeDate"
-      >
-      <h1>test 4</h1>
-      <input class="anyds-datepicker__native" type="date" tabindex="-1" aria-hidden="true" min="1986-11-01" max="2026-11-17">
+            <input class="native-input" type="date" id="nativeDate">
+            <h1>test 4</h1>
+            <span class="anyds-datepicker__cta-wrapper"> <button class="anyds-datepicker__cta" type="button"
+                    aria-label="motor-rd26-first-registration-date-aria-label"> <span class="anyds-icon-wrapper"
+                        style="width:24px;height:24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="root" viewBox="0 0 24 24" fill="none">
+                            <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M8 2.75v3M16 2.75v3M3.75 9.5h16.5M5.5 4.75h13a2 2 0 0 1 2 2v11.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V6.75a2 2 0 0 1 2-2Z">
+                            </path>
+                            <circle cx="8" cy="13.25" r="0.85" fill="currentColor"></circle>
+                            <circle cx="12" cy="13.25" r="0.85" fill="currentColor"></circle>
+                            <circle cx="16" cy="13.25" r="0.85" fill="currentColor"></circle>
+                            <circle cx="8" cy="16.75" r="0.85" fill="currentColor"></circle>
+                            <circle cx="12" cy="16.75" r="0.85" fill="currentColor"></circle>
+                            <circle cx="16" cy="16.75" r="0.85" fill="currentColor"></circle>
+                        </svg></span> </button> <input class="anyds-datepicker__native" type="date" tabindex="-1"
+                    aria-hidden="true" min="1986-11-01" max="2026-11-17" style="
+"> </span>
+            <h1>test 5</h1>
+            <span class="anyds-datepicker__cta-wrapper"> <button class="anyds-datepicker__cta" type="button"
+                    aria-label="motor-rd26-first-registration-date-aria-label"> <span class="anyds-icon-wrapper"
+                        style="width:24px;height:24px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="root" viewBox="0 0 24 24" fill="none">
+                            <path stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M8 2.75v3M16 2.75v3M3.75 9.5h16.5M5.5 4.75h13a2 2 0 0 1 2 2v11.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2V6.75a2 2 0 0 1 2-2Z">
+                            </path>
+                            <circle cx="8" cy="13.25" r="0.85" fill="currentColor"></circle>
+                            <circle cx="12" cy="13.25" r="0.85" fill="currentColor"></circle>
+                            <circle cx="16" cy="13.25" r="0.85" fill="currentColor"></circle>
+                            <circle cx="8" cy="16.75" r="0.85" fill="currentColor"></circle>
+                            <circle cx="12" cy="16.75" r="0.85" fill="currentColor"></circle>
+                            <circle cx="16" cy="16.75" r="0.85" fill="currentColor"></circle>
+                        </svg></span> </button> <input class="anyds-date2picker__native" type="date" tabindex="-1"
+                    aria-hidden="true" min="1986-11-01" max="2026-11-17" style="
+"> </span>
+        </div>
+
+        <div class="result">
+            Selected date:
+            <strong id="result">None</strong>
+        </div>
     </div>
 
-    <div class="result">
-      Selected date:
-      <strong id="result">None</strong>
-    </div>
-  </div>
+    <script>
+        const customDate =
+            document.getElementById("customDate");
 
-  <script>
-    const customDate =
-      document.getElementById("customDate");
+        const nativeDate =
+            document.getElementById("nativeDate");
 
-    const nativeDate =
-      document.getElementById("nativeDate");
+        const result =
+            document.getElementById("result");
 
-    const result =
-      document.getElementById("result");
+        const buttonText =
+            document.getElementById("buttonText");
 
-    const buttonText =
-      document.getElementById("buttonText");
+        function updateDate(event) {
+            const value = event.target.value;
 
-    function updateDate(event) {
-      const value = event.target.value;
+            result.textContent = value || "None";
 
-      result.textContent = value || "None";
+            if (value) {
+                buttonText.textContent = "📅 " + value;
+            } else {
+                buttonText.textContent = "📅 Select Date";
+            }
+        }
 
-      if (value) {
-        buttonText.textContent = "📅 " + value;
-      } else {
-        buttonText.textContent = "📅 Select Date";
-      }
-    }
-
-    customDate.addEventListener("change", updateDate);
-    nativeDate.addEventListener("change", updateDate);
-  </script>
+        customDate.addEventListener("change", updateDate);
+        nativeDate.addEventListener("change", updateDate);
+    </script>
 </body>
+
 </html>
