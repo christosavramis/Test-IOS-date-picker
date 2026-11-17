@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>iOS Date Picker Test</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 24px;
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    .container {
+      max-width: 420px;
+      margin: 40px auto;
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .date-button {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 52px;
+      padding: 14px;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .date-button input {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .native-input {
+      display: block;
+      width: 100%;
+      min-height: 48px;
+      margin-top: 12px;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 14px;
+      background: #e8f0fe;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>iPhone Date Picker Test</h2>
+
+    <p>Test 1: Tap the blue button.</p>
+
+    <label class="date-button">
+      <span id="buttonText">📅 Select Date</span>
+      <input
+        type="date"
+        id="customDate"
+        aria-label="Select date"
+      >
+    </label>
+
+    <div class="section">
+      <p>Test 2: Native HTML date input.</p>
+
+      <input
+        class="native-input"
+        type="date"
+        id="nativeDate"
+      >
+    </div>
+
+    <div class="result">
+      Selected date:
+      <strong id="result">None</strong>
+    </div>
+  </div>
+
+  <script>
+    const customDate =
+      document.getElementById("customDate");
+
+    const nativeDate =
+      document.getElementById("nativeDate");
+
+    const result =
+      document.getElementById("result");
+
+    const buttonText =
+      document.getElementById("buttonText");
+
+    function updateDate(event) {
+      const value = event.target.value;
+
+      result.textContent = value || "None";
+
+      if (value) {
+        buttonText.textContent = "📅 " + value;
+      } else {
+        buttonText.textContent = "📅 Select Date";
+      }
+    }
+
+    customDate.addEventListener("change", updateDate);
+    nativeDate.addEventListener("change", updateDate);
+  </script>
+</body>
+</html>
